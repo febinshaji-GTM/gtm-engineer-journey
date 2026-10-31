@@ -1,4 +1,3 @@
-Write the README (15 min). Use this structure:
    # GTM Engineer Journey
    My 12-week plan to move from email marketing into GTM engineering.
 
