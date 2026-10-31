@@ -1,0 +1,189 @@
+{
+  "info": {
+    "_postman_id": "4e07bae0-f056-4173-9d4d-9ab8d87d1fe3",
+    "name": "HubSpot CRM Practice",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58962245"
+  },
+  "item": [
+    {
+      "name": "DELETE Request HubSpot",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.environment.set(\"contactId\", pm.response.json().id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/crm/v3/objects/contacts/{{contactId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "crm",
+            "v3",
+            "objects",
+            "contacts",
+            "{{contactId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET Request HubSpot",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.environment.set(\"contactId\", pm.response.json().id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/crm/v3/objects/contacts?limit=4",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "crm",
+            "v3",
+            "objects",
+            "contacts"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "4"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Request HubSpot",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.environment.set(\"contactId\", pm.response.json().id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "  {\r\n    \"properties\": {\r\n      \"email\": \"asha.rao2@example.com\",\r\n      \"firstname\": \"Asha\",\r\n      \"lastname\": \"Rao\",\r\n      \"company\": \"Acme Corp\",\r\n      \"jobtitle\": \"VP Sales\"\r\n    }\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/crm/v3/objects/contacts/{{contactId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "crm",
+            "v3",
+            "objects",
+            "contacts",
+            "{{contactId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PATCH Request Hubspot",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.environment.set(\"contactId\", pm.response.json().id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "  { \"properties\": { \"jobtitle\": \"Head of Revenue Operations\" } }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/crm/v3/objects/contacts/{{contactId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "crm",
+            "v3",
+            "objects",
+            "contacts",
+            "{{contactId}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  }
+}
